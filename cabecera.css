@@ -1,0 +1,30 @@
+#cabecera{
+  display: flex;
+}
+h1{
+  text-align: center;
+  width: 60%;
+  height: 1.2em;
+  background: #BFBFBF;
+  /*color: bl;*/
+}
+#barraNavegacion{
+  display: flex;
+  height: 3em;
+  justify-content: space-around;
+  border: 1px solid black;
+  width: 40%;
+  background: #BFBFBF;
+}
+#inicio{
+  width: 20%;
+  margin: auto 0;
+  height: 2em;
+  background: white;
+  border-radius: 15px;
+  padding: 0 3.3em;
+}
+
+.botonRedondeado{
+
+}
