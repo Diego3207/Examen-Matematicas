@@ -13,17 +13,17 @@
 <div id="cabecera">
 	<h1>HAT MATH</h1>
 	<div id="barraNavegacion">
-		<div id="inicio">
+		<button id="inicio" class="botonRedondeadoCorto">
 			<a href="#">Inicio</a>
-		</div>
-		<div id="perfil">
+		</button>
+		<button id="perfil" class="botonRedondeadoCorto">
 			<a href="#">Perfil</a>
-		</div>
-		<div id="perfil">
+		</button>
+		<button id="perfil" class="botonRedondeadoLargo">
 			<a href="#">Iniciar Sesión</a>
-		</div>
-		<div id="perfil">
+		</button>
+		<button class="botonRedondeadoLargo">
 			<a href="#">Registrar Sesión</a>
-		</div>
+		</button>
 	</div>
 </div>

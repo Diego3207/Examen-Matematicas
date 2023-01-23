@@ -3,28 +3,43 @@
 }
 h1{
   text-align: center;
-  width: 60%;
-  height: 1.2em;
-  background: #BFBFBF;
-  /*color: bl;*/
+  width: 50%;
+  height: 2.7em;
+  background: ;
+  padding-top: 1.5em;
 }
 #barraNavegacion{
+  margin-top: 3em;
+  margin-right: 9em;
   display: flex;
   height: 3em;
   justify-content: space-around;
-  border: 1px solid black;
-  width: 40%;
-  background: #BFBFBF;
+  width: 50%;
+  font-size: 1.1em;
 }
-#inicio{
+#barraNavegacion a:link{
+  color: #034159;
+  text-decoration: none;
+}
+#barraNavegacion a:visited{
+  color: #E81C64;
+}
+
+.botonRedondeadoCorto{
   width: 20%;
-  margin: auto 0;
-  height: 2em;
+  padding: 10px 50px;
+  border-right: 3px solid #034159;
+  border-bottom: 3px solid #034159;
+  border-left: 0;
+  border-top: 0;
   background: white;
-  border-radius: 15px;
-  padding: 0 3.3em;
 }
-
-.botonRedondeado{
-
+.botonRedondeadoLargo{
+  width: 20%;
+  padding: 10px 20px;
+  border-right: 3px solid #034159;
+  border-bottom: 3px solid #034159;
+  border-left: 0;
+  border-top: 0;
+  background: white;
 }
