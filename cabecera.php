@@ -17,7 +17,7 @@
 			<a href="#">Inicio</a>
 		</button>
 		<button id="perfil" class="botonRedondeadoCorto">
-			<a href="#">Perfil</a>
+			<a href="perfil.php">Perfil</a>
 		</button>
 		<button id="perfil" class="botonRedondeadoLargo">
 			<a href="#">Iniciar Sesión</a>
