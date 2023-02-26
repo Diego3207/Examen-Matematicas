@@ -25,11 +25,13 @@ img[title="Usuario"]{
   flex-direction: column;
   justify-content: center;
   width: 300px;
-  height: 500px;
+  height: 600px;
 }
 #exp{
   margin: 20px auto;
   font-size: 20px;
+  height: 200px;
+  width: 200px;
 }
 input[alt="botonEnviar"]{
   width: 150px;

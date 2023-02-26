@@ -19,19 +19,18 @@ $nuevoNivel=subirNiveles($nivel, $exp);
 <head>
 	<meta charset="UTF-8">
 	<title>Perfil</title>
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="perfil.css">
 </head>
 <body>
 	<div id="recuadroExterior">
 		<div id="recuadroInterior">
-			<img src="src/usuario.svg" alt="Usuario" title="Usuario">
+			<img src="src/usuario.svg" alt="" title="Usuario">
 			<h2>Nivel <?php echo $nuevoNivel; ?></h2>
-			<div id="exp">
-				Barra de progreso
 			<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 				<div class="progress-bar" style="width: 25%">25%</div>
 			</div>
-				<br>
+			<div id="exp">
 				
 				<?php echo $exp; ?> EXP
 			</div>
