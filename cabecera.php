@@ -13,12 +13,8 @@
 <div id="cabecera">
 	<h1>HAT MATH</h1>
 	<div id="barraNavegacion">
-		<button id="inicio" class="botonRedondeadoCorto">
-			<a href="#">Inicio</a>
-		</button>
-		<button id="perfil" class="botonRedondeadoCorto">
-			<a href="perfil.php">Perfil</a>
-		</button>
+		<a href="index.php" id="botonInicio">Inicio</a>
+		<a href="perfil.php" id="botonPerfil">Perfil</a>
 		<button id="perfil" class="botonRedondeadoLargo">
 			<a href="#">Iniciar Sesión</a>
 		</button>

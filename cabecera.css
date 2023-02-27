@@ -25,14 +25,28 @@ h1{
   color: #E81C64;
 }
 
-.botonRedondeadoCorto{
+#botonInicio{
   width: 20%;
-  padding: 10px 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
   border-right: 3px solid #034159;
   border-bottom: 3px solid #034159;
   border-left: 0;
   border-top: 0;
-  background: white;
+}
+#botonPerfil{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  border-right: 3px solid #034159;
+  border-bottom: 3px solid #034159;
+  border-left: 0;
+  border-top: 0;
+}
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
 }
 .botonRedondeadoLargo{
   width: 20%;
