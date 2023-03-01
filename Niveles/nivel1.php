@@ -1,16 +1,16 @@
-<?php include("cabecera.php"); ?>
+<?php include("../cabecera.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Nivel 1</title>
-	<link rel="stylesheet" href="nivel1.css">
+	<link rel="stylesheet" href="../CSS/Niveles/nivel1.css">
 </head>
 <body>
 	<div id="preguntas">
 		<h1>Nivel 1</h1>
 		<section>
-			<form action="nivel.php" method="post">
+			<form action="nivel1.php" method="post">
 				<p>
 					1. ¿Qué fracciones representan los puntos señalados en la recta?
 					
