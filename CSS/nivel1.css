@@ -3,3 +3,19 @@
   margin: 0 auto;
   border: 1px solid cyan;
 }
+/*ocultar input con css*/
+/*.content-input input,*/
+/*.content-select select{*/
+  /*appearance: none;*/
+  /*-webkit-appearance: none;*/
+  /*-moz-appearance:none;*/
+/*}*/
+/*.content-input input{*/
+  /*visibility: hidden;*/
+  /*position: absolute;*/
+  /*right: 0;*/
+/*}*/
+
+label > input[type="radio"]{
+  display: none;
+}
