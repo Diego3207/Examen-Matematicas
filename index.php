@@ -1,4 +1,10 @@
-<?php include("cabecera.php"); ?>
+<?php include("cabecera.php"); 
+#version 1 sin enviar respuestas, solo calificación y ya
+#sin rangos
+?>
+<head>
+	<title>Examen</title>
+</head>
 	<header>
 		<h2>¿Que nivel eres?</h2>
 	</header>

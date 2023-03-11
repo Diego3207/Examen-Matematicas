@@ -1,12 +1,26 @@
-#cabecera{
-  display: flex;
-}
-h1{
+h1[name="hatMath"]{
   text-align: center;
   width: 50%;
   height: 2.7em;
-  background: ;
   padding-top: 1.5em;
+}
+div > a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+div > a{
+  width: 9em;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  border-right: 3px solid #034159;
+  border-bottom: 3px solid #034159;
+  border-left: 0;
+  border-top: 0;
+  color: black;
+}
+
+#cabecera{
+  display: flex;
 }
 #barraNavegacion{
   margin-top: 3em;
@@ -16,44 +30,4 @@ h1{
   justify-content: space-around;
   width: 50%;
   font-size: 1.1em;
-}
-#barraNavegacion a:link{
-  color: #034159;
-  text-decoration: none;
-}
-#barraNavegacion a:visited{
-  color: #E81C64;
-}
-
-#botonInicio{
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  border-right: 3px solid #034159;
-  border-bottom: 3px solid #034159;
-  border-left: 0;
-  border-top: 0;
-}
-#botonPerfil{
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  border-right: 3px solid #034159;
-  border-bottom: 3px solid #034159;
-  border-left: 0;
-  border-top: 0;
-}
-a:link, a:visited, a:hover, a:active{
-  text-decoration: none;
-}
-.botonRedondeadoLargo{
-  width: 20%;
-  padding: 10px 20px;
-  border-right: 3px solid #034159;
-  border-bottom: 3px solid #034159;
-  border-left: 0;
-  border-top: 0;
-  background: white;
 }

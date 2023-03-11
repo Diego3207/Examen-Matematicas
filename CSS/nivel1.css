@@ -1,21 +1,52 @@
-#preguntas{
+/*[> pretty radio <]*/
+label > input[type="radio"] {
+  display: none;
+}
+label > input[type="radio"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.3rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: gray;
+}
+label > input[type="radio"]:checked + * {
+  color: teal;
+}
+label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);
+  border-color: teal;
+}
+
+/*[> basic layout <]*/
+fieldset {
+  margin: 2em auto;
+  width: 20em;
+  font-size: 1.4em;
+}
+label > input[type="radio"] + * {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+h1[name="nivel1"]{
+  text-align: center;
+}
+p{
+  width: 70%;
+  height: 2em;
+  font-size: 1.3em;
+  padding: 2em 4em;
+  background: #0211;
+}
+img{
+  margin: auto;
+  display: block;
+}
+section{
   width: 70%;
   margin: 0 auto;
-  border: 1px solid cyan;
-}
-/*ocultar input con css*/
-/*.content-input input,*/
-/*.content-select select{*/
-  /*appearance: none;*/
-  /*-webkit-appearance: none;*/
-  /*-moz-appearance:none;*/
-/*}*/
-/*.content-input input{*/
-  /*visibility: hidden;*/
-  /*position: absolute;*/
-  /*right: 0;*/
-/*}*/
-
-label > input[type="radio"]{
-  display: none;
 }
