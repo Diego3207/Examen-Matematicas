@@ -40,6 +40,7 @@ p{
   height: 2em;
   font-size: 1.3em;
   padding: 2em 4em;
+  margin: 0 auto;
   background: #0211;
 }
 img{
@@ -49,4 +50,5 @@ img{
 section{
   width: 70%;
   margin: 0 auto;
+  /*border: 1px solid gray;*/
 }

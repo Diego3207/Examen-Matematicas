@@ -13,7 +13,7 @@
 	<div id="barraNavegacion">
 		<a href="index.php">Inicio</a>
 		<a href="perfil.php">Perfil</a>
-		<a href="iniciarSesion.php">Iniciar Sesión</a>
+		<a href="login.php">Iniciar Sesión</a>
 		<a href="registrarSesion.php">Registrar Sesión</a>
 	</div>
 </div>

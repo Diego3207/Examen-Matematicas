@@ -1,0 +1,30 @@
+body{
+  margin: 0 auto;
+  width: 70%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.7px solid gray;
+}
+label{
+  width: 10em;
+  font-size: 1.3em;
+}
+input{
+  width: 6em;
+  font-size: 1.5em;
+}
+
+
+
+#credenciales{
+  display: flex;
+  flex-direction: column;
+  margin: 15em auto;
+  width: 15em;
+}
+#registro{
+  margin: 0 auto;
+}
