@@ -1,14 +1,29 @@
 <?php
-session_start();
-if($_POST){
-	if(($_POST["usuario"]=="Levianix") and ($_POST["contrasenia"]=="3207")){
-		$_SESSION["usuario"]="Levianix";
-		echo "usuario loggeado";
+$nombres=[];
+include("conexion.php");
+$objConexion=new conexion();
+$sql="select usuario from usuario;";
+$resultado=$objConexion->consultar($sql);
+//print_r($resultado);
+foreach($resultado as $nombre){
+	array_push($nombres,$nombre[0]);
+}
+//echo $nombres[8];
 
-		header("location:index.php");
-	}
-	else{
-		echo "<script> alert('Usuario y/o contraseña incorrecta')</script>";
+session_start();
+
+if($_POST){
+	foreach($nombres as $nombre){
+		if(($_POST["usuario"]==$nombre)){
+			$_SESSION["usuario"]=$nombre;
+			echo "usuario loggeado";
+
+			header("location:index.php");
+			return;
+		}
+		else{
+			echo "<script> alert('Usuario y/o contraseña incorrecta')</script>";
+		}
 	}
 }
 ?>

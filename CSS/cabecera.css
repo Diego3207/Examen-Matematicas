@@ -7,7 +7,7 @@ h1[name="hatMath"]{
 div > a:link, a:visited, a:hover, a:active{
   text-decoration: none;
 }
-div > a{
+a{
   width: 9em;
   display: flex;
   justify-content: center;
@@ -17,6 +17,9 @@ div > a{
   border-left: 0;
   border-top: 0;
   color: black;
+}
+p{
+  font-size: 1.4em;
 }
 
 #cabecera{
@@ -30,4 +33,9 @@ div > a{
   justify-content: space-around;
   width: 50%;
   font-size: 1.1em;
+}
+#ex1 a{
+  color: red;
+  border: none;
+  font-size: 1.6em;
 }

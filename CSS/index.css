@@ -36,7 +36,7 @@ header{
 
 /*clases*/
 #botonNivel1{
-  background: #E81C64;
+  background: #3498DB;
   width: 25%;
   height: 20em;
   border-radius: 25px;
@@ -52,7 +52,7 @@ a:link, a:visited, a:hover, a:active{
   text-decoration: none;
 }
 #botonNivel2{
-  background: #05BBE8;
+  background: #1ABC9C;
   width: 25%;
   height: 20em;
   border-radius: 25px;

@@ -7,9 +7,9 @@ $respuesta2="";
 $respuesta3="";
 $usuario="";
 $idUser="";
+$porcentaje="";
 
-
-$usuario=$_SESSION["usuario"];
+$usuario=(isset($_SESSION["usuario"])?$_SESSION["usuario"]:"");
 $objConexion=new conexion();
 $sql="select ID_usuario from usuario where usuario='$usuario';";
 $resultados=$objConexion->consultar($sql);
@@ -115,7 +115,12 @@ if($_POST){
 						<span>D) 1/6, 4/12, 2/3, 5/6</span>
 					</label>
 				</fieldset>
-				<input type="submit" value="Enviar formulario">
+				<?php if($usuario!=""){ ?>
+					<input type="submit" value="Enviar Formulario" name="botonEnviar" title="Enviar Formulario">
+				<?php }else{ ?>
+					<a href="registro.php">Regisrar</a>
+					<a href="login.php">Ingresar sesión</a>
+				<?php } ?>
 			</form>
 	</section>
 </body>

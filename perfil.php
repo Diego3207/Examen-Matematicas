@@ -1,4 +1,5 @@
 <?php
+include("cabecera.php");
 $exp=0;
 $nivel=1;
 
