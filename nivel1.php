@@ -1,8 +1,23 @@
 <?php
 include("conexion.php");
+include("cabecera.php");
+
 $respuesta1="";
 $respuesta2="";
 $respuesta3="";
+$usuario="";
+$idUser="";
+
+
+$usuario=$_SESSION["usuario"];
+$objConexion=new conexion();
+$sql="select ID_usuario from usuario where usuario='$usuario';";
+$resultados=$objConexion->consultar($sql);
+
+foreach($resultados as $id){
+	$idUser= $id[0];
+}
+
 if($_POST){
 	$respuesta1=(isset($_POST["radio_respuestas1"]))?$_POST["radio_respuestas1"]:"";
 	$respuesta2=(isset($_POST["radio_respuestas2"]))?$_POST["radio_respuestas2"]:"";
@@ -13,20 +28,15 @@ if($_POST){
 	$res=$respuestaComprobante1+$respuestaComprobante2+$respuestaComprobante3;
 	$porcentaje=($res*100)/3;
 	echo $res." de 3 preguntas: ".$porcentaje;
-	
+
+	$objConexion=new conexion();
+	$sql="insert into examen (calificación,id_usuario)
+				values ('$porcentaje','$idUser');";
+	$objConexion->ejecutar($sql);
+	header("location:index.php");
 }
-
-$objConexion=new Conexion();
-$sql="insert into ";
-$resultados=$objConexion->ejecutar($sql);
-
-//SELECT usuario.usuario,usuario.nivel,examen.calificacion 
-//FROM usuario
-//inner join examen
-//on usuario.id_examen=examen.id_examen;
 ?>
 
-<?php include("cabecera.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
