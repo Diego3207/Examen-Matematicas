@@ -25,7 +25,7 @@ label{
   padding: 1em 2em;
   align-self: flex-start;
 }
-input[type="text"]{
+form > input{
   border-radius: 10px;
   height: 2.7em;
   width: 17em;

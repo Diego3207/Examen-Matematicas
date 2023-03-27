@@ -42,7 +42,7 @@ if($_POST){
 			<label>
 				Contraseña:
 			</label>
-			<input type="text" name="contrasenia">
+			<input type="password" name="contrasenia">
 			<input type="submit" value="Registrar" id="botonEnviar">
 		</form>
 	</div>

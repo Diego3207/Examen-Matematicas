@@ -1,0 +1,52 @@
+section{
+  margin: 15em auto;
+  width: 25em;
+  height: 25em;
+  border: 1px solid cyan;
+  display: flex;
+  background: white;
+  flex-direction: column;
+  justify-content: space-around;
+  border-top: 4px solid #034159;
+  border-left: 4px solid #034159;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+label{
+  border-left: 0.4px solid #0001;
+  font-size: 1.5em;
+  /*margin-left: 1em;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ladoIzq{
+}
+/*.ladoDer{*/
+  /*width: 5em;*/
+  /*border-bottom: 0.4px solid #0001;*/
+/*}*/
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+a{
+  align-self: center;
+  background: #034159;
+  width: 9em;
+  height: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2.5em;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+#usuario{
+  margin-left: 3em;
+}
+#nivel{
+  
+}

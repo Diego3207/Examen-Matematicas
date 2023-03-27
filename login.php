@@ -1,30 +1,30 @@
 <?php
 $nombres=[];
+$contrasenias=[];
+$i=0;
 include("conexion.php");
 $objConexion=new conexion();
-$sql="select usuario from usuario;";
+$sql="select usuario,contraseña from usuario;";
 $resultado=$objConexion->consultar($sql);
-//print_r($resultado);
 foreach($resultado as $nombre){
 	array_push($nombres,$nombre[0]);
+	array_push($contrasenias,$nombre[1]);
 }
-//echo $nombres[8];
 
 session_start();
 
 if($_POST){
-	foreach($nombres as $nombre){
-		if(($_POST["usuario"]==$nombre)){
-			$_SESSION["usuario"]=$nombre;
+	while($i<count($nombre)-1){
+		if(($_POST["usuario"]==$nombres[$i]) and ($_POST["contrasenia"]==$contrasenias[$i])){
+			$_SESSION["usuario"]=$nombres[$i];
 			echo "usuario loggeado";
 
 			header("location:index.php");
 			return;
 		}
-		else{
-			echo "<script> alert('Usuario y/o contraseña incorrecta')</script>";
-		}
+		$i+=1;
 	}
+	echo "<script> alert('Usuario y/o contraseña incorrecta')</script>";
 }
 ?>
 
@@ -46,11 +46,11 @@ if($_POST){
 			<label>
 				Usuario: 
 			</label>
-				<input type="text" name="usuario">
+				<input type="text" name="usuario" value="<?php echo isset($_POST["usuario"])?$_POST["usuario"]:""; ?>">
 			<label>
 				Contraseña: 
 			</label>
-				<input type="text" name="contrasenia">
+				<input type="password" name="contrasenia">
 			<input type="submit" value="Entrar" id="botonEnviar">
 		</form>
 	</div>

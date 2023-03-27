@@ -8,14 +8,23 @@ $respuesta3="";
 $usuario="";
 $idUser="";
 $porcentaje="";
+$experienciaObtenida=0;
+$experiencia=0;
+$nivel=0;
 
 $usuario=(isset($_SESSION["usuario"])?$_SESSION["usuario"]:"");
 $objConexion=new conexion();
-$sql="select ID_usuario from usuario where usuario='$usuario';";
-$resultados=$objConexion->consultar($sql);
-
-foreach($resultados as $id){
+$sqlConsultarID="select ID_usuario from usuario where usuario='$usuario';";
+$resultadosID=$objConexion->consultar($sqlConsultarID);
+foreach($resultadosID as $id){
 	$idUser= $id[0];
+}
+
+$sqlConsultarExperiencia="select nivel,experiencia from usuario where usuario='$usuario';";
+$resultadosExperiencia=$objConexion->consultar($sqlConsultarExperiencia);
+foreach($resultadosExperiencia as $experiencias){
+	$experiencia= $experiencias[1];
+	$nivel= $experiencias[0];
 }
 
 if($_POST){
@@ -27,13 +36,37 @@ if($_POST){
 	$respuestaComprobante3=($respuesta3=="A")?1:0;
 	$res=$respuestaComprobante1+$respuestaComprobante2+$respuestaComprobante3;
 	$porcentaje=($res*100)/3;
-	echo $res." de 3 preguntas: ".$porcentaje;
+	//echo $res." de 3 preguntas: ".$porcentaje;
 
+	switch($experiencia){
+		case 100:
+			$experienciaObtenida=10;
+			break;
+		case 70:
+			$experienciaObtenida=7;
+			break;
+		case 40:
+			$experienciaObtenida=4;
+			break;
+	}
+	$experiencia+=$experienciaObtenida;
+	switch($experiencia){
+		case 50:
+			$nivel=2;
+			break;
+		case 100:
+			$nivel=3;
+			break;
+	}
+	echo $experiencia;
 	$objConexion=new conexion();
-	$sql="insert into examen (calificación,id_usuario)
+	$sqlUpdate="update examen.usuario set experiencia='$experiencia',nivel='$nivel' where ID_usuario='$idUser';";
+	$objConexion->ejecutar($sqlUpdate);
+
+	$sqlInsertar="insert into examen (calificación,id_usuario)
 				values ('$porcentaje','$idUser');";
-	$objConexion->ejecutar($sql);
-	header("location:index.php");
+	$objConexion->ejecutar($sqlInsertar);
+	header("location:resultados.php");
 }
 ?>
 

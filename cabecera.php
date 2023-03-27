@@ -28,7 +28,7 @@ $usuario=(isset($_SESSION["usuario"])?$_SESSION["usuario"]:"");
 		<?php } ?>
 		<?php if($usuario!=""){ ?>
 			<div id="ex1" class="modal">
-				<p>¿Seguro que quieres salir de sesión?</p>
+				<label name="salirSesion">¿Seguro que quieres salir de sesión?</label>
 				<a href="cerrar.php">Cerrar</a>
 			</div>
 
