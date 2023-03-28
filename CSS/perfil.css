@@ -5,8 +5,27 @@ img[title="Usuario"]{
   width: 60%;
   margin: 0 auto;
 }
+input[alt="botonEnviar"]{
+  width: 150px;
+  height: 50px;
+  font-size: 14px;
+  margin: 20px 100px;
+  background: white;
+  border: 1px solid #034159;
+  border-radius: 25px;
+}
+
+#experiencia{
+  margin: 0 auto;
+  font-size: 20px;
+  width: 3.5em;
+}
+#tituloNivel{
+  margin: 20px auto;
+  color: #0FC2C0;
+}
 #recuadroExterior{
-  margin: 4em auto;
+  margin: 1em auto;
   border: 1px solid #034159;
   width: 350px;
   height: 41em;
@@ -22,17 +41,23 @@ img[title="Usuario"]{
   width: 300px;
   height: 600px;
 }
-#exp{
-  margin: 20px 5em;
-  font-size: 20px;
-  width: 200px;
+
+#progreso{
+  margin: 1em auto;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #AED6F1;
 }
-input[alt="botonEnviar"]{
-  width: 150px;
-  height: 50px;
-  font-size: 14px;
-  margin: 50px 100px;
-  background: white;
-  border: 1px solid #034159;
-  border-radius: 25px;
+#barraProgreso{
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #3498DB;
+  height: 1.2em;
+  background: #5DADE2;
+}
+#textoBarra{
+  position: absolute;
+  left: 49.5%;
+  color: black;
+  font-size: 1.1em;
 }

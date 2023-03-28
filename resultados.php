@@ -33,21 +33,17 @@ foreach($resultadosCalificacion as $puntuacion){
 	<section>
 		<label>
 			<div class="ladoIzq">Usuario</div>
-			<div id="usuario"><?php echo $usuario; ?></div>
-		</label>
-		<label>
 			<div class="ladoIzq">Calificación</div>
-			<div id="calificacion"><?php echo $calificacion; ?></div>
-		</label>
-		<label>
 			<div class="ladoIzq">Nivel</div>
-			<div id="nivel"><?php echo $nivel; ?></div>
+			<div class="ladoIzq">Experiencia</div>
 		</label>
 		<label>
-			<div class="ladoIzq">Experiencia</div>
-			<div id="experiencia"><?php echo $experiencia; ?></div>
+			<div class="ladoDer"><?php echo $usuario; ?></div>
+			<div class="ladoDer"><?php echo $calificacion; ?></div>
+			<div class="ladoDer"><?php echo $nivel; ?></div>
+			<div class="ladoDer"><?php echo $experiencia; ?></div>
 		</label>
-		<a href="index.php">Regresar al inicio</a>
 	</section>
 </body>
+	<a href="index.php">Regresar al inicio</a>
 </html>

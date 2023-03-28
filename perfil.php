@@ -1,18 +1,23 @@
 <?php
 include("cabecera.php");
-$exp=0;
-$nivel=1;
+include("conexion.php");
 
-//$exp=(isset($_POST["numero"])?$_POST["numero"]:"");
+$usuario=$_SESSION["usuario"];
+$experiencia=0;
+$nivel=0;
 
-function subirNiveles($nivel, $exp){
-	if($exp>=50){
-		$nivel++;
-		echo $nivel;
-	}
-	return $nivel;
-}
-$nuevoNivel=subirNiveles($nivel, $exp);
+$objConexion=new conexion();
+//$sqlConsultarUsuario="select nivel,experiencia from usuario where='$usuario';";
+//$resultados=$objConexion->consultar($sqlConsultarUsuario);
+//foreach($resultados as $usuario){
+	//$nivel=$usuario[0];
+	//$experiencia=$usuario[1];
+//}
+//echo $nivel;
+//echo $experiencia;
+
+//$sqlConsultarExamen="select calificación from examen";
+
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +31,14 @@ $nuevoNivel=subirNiveles($nivel, $exp);
 	<div id="recuadroExterior">
 		<div id="recuadroInterior">
 			<img src="src/usuario.svg" alt="" title="Usuario">
-			<h2>Nivel <?php echo $nuevoNivel; ?></h2>
-			<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-				<div class="progress-bar" style="width: 35%">25%</div>
-			</div>
-			<div id="exp">
-				EXP <?php echo $exp; ?>
+			<h1 id="tituloNivel">Nivel <?php echo "1"; ?></h1>
+			<span id="experiencia">
+				EXP <?php echo "39"; ?>
+			</span>
+			<div id="progreso">
+				<div id="barraProgreso" style="width: 10%">
+					<span id="textoBarra">80%</span>
+				</div>
 			</div>
 			<h2>Nombre: </h2>
 		</div>
