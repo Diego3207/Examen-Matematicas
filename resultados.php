@@ -16,7 +16,7 @@ foreach($resultadosID as $id){
 	$experiencia=$id[2];
 }
 
-$sqlConsultarCalificacion="select calificación from examen where id_usuario='$idUser'";
+$sqlConsultarCalificacion="select calificacion from examen where id_usuario='$idUser'";
 $resultadosCalificacion=$objConexion->consultar($sqlConsultarCalificacion);
 foreach($resultadosCalificacion as $puntuacion){
 	$calificacion=$puntuacion[0];

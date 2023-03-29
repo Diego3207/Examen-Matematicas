@@ -63,7 +63,7 @@ if($_POST){
 	$sqlUpdate="update examen.usuario set experiencia='$experiencia',nivel='$nivel' where ID_usuario='$idUser';";
 	$objConexion->ejecutar($sqlUpdate);
 
-	$sqlInsertar="insert into examen (calificación,id_usuario)
+	$sqlInsertar="insert into examen (calificacion,id_usuario)
 				values ('$porcentaje','$idUser');";
 	$objConexion->ejecutar($sqlInsertar);
 	header("location:resultados.php");
@@ -79,7 +79,7 @@ if($_POST){
 </head>
 <body>
 	<section>
-		<h1 name="nivel1">Nivel 1</h1>
+		<h1 id="nivel1">Nivel 1</h1>
 			<form action="nivel1.php" method="post">
 				<p>
 					1. ¿Qué fracciones representan los puntos señalados en la recta?

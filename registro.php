@@ -38,11 +38,11 @@ if($_POST){
 			<label>
 				Usuario:
 			</label>
-			<input type="text" name="usuario">
+			<input required type="text" name="usuario">
 			<label>
 				Contraseña:
 			</label>
-			<input type="password" name="contrasenia">
+			<input required type="password" name="contrasenia">
 			<input type="submit" value="Registrar" id="botonEnviar">
 		</form>
 	</div>

@@ -2,7 +2,7 @@
 header{
   width: 30%;
   height: 4em;
-  margin: 2em auto;
+  margin: 0 auto;
   background: #034159;
   border-top-right-radius: 45px;
   border-bottom-left-radius: 45px;
@@ -14,31 +14,16 @@ header{
 
 #niveles{
   display: flex;
-  margin-top: 4em;
+  margin-top: 2em;
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*clases*/
 #botonNivel1{
   background: #3498DB;
   width: 25%;
-  height: 20em;
+  height: 13em;
   border-radius: 25px;
   border: 0;
   color: white;
@@ -54,7 +39,7 @@ a:link, a:visited, a:hover, a:active{
 #botonNivel2{
   background: #1ABC9C;
   width: 25%;
-  height: 20em;
+  height: 13em;
   border-radius: 25px;
   border: 0;
   color: white;
@@ -67,7 +52,7 @@ a:link, a:visited, a:hover, a:active{
 #botonNivel3{
   background: #E8D71C;
   width: 25%;
-  height: 20em;
+  height: 13em;
   border-radius: 25px;
   border: 0;
   color: white;

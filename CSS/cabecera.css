@@ -1,8 +1,7 @@
 h1[name="hatMath"]{
   text-align: center;
   width: 50%;
-  height: 2.7em;
-  padding-top: 1.5em;
+  padding-top: 0.6em;
 }
 div > a:link, a:visited, a:hover, a:active{
   text-decoration: none;
@@ -24,9 +23,10 @@ label[name="salirSesion"]{
 
 #cabecera{
   display: flex;
+  height: 8em;
 }
 #barraNavegacion{
-  margin-top: 3em;
+  margin-top: 2em;
   margin-right: 9em;
   display: flex;
   height: 3em;

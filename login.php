@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+session_start();
 $nombres=[];
 $contrasenias=[];
 $i=0;
@@ -11,10 +13,8 @@ foreach($resultado as $nombre){
 	array_push($contrasenias,$nombre[1]);
 }
 
-session_start();
-
 if($_POST){
-	while($i<count($nombre)-1){
+	while($i<count($nombre)){
 		if(($_POST["usuario"]==$nombres[$i]) and ($_POST["contrasenia"]==$contrasenias[$i])){
 			$_SESSION["usuario"]=$nombres[$i];
 			echo "usuario loggeado";
@@ -46,11 +46,11 @@ if($_POST){
 			<label>
 				Usuario: 
 			</label>
-				<input type="text" name="usuario" value="<?php echo isset($_POST["usuario"])?$_POST["usuario"]:""; ?>">
+				<input required type="text" name="usuario" value="<?php echo isset($_POST["usuario"])?$_POST["usuario"]:""; ?>">
 			<label>
 				Contraseña: 
 			</label>
-				<input type="password" name="contrasenia">
+				<input required type="password" name="contrasenia">
 			<input type="submit" value="Entrar" id="botonEnviar">
 		</form>
 	</div>

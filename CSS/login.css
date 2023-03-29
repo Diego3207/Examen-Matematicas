@@ -2,12 +2,11 @@ body{
   margin: 0 auto;
   padding: 0;
   width: 70%;
-  /*border: 1px solid red;*/
 }
 h1{
   text-align: center;
   margin: 1em 0;
-  height: 3em;
+  height: 1.7em;
   border-bottom: 1px solid #0003;
 }
 form{
@@ -19,7 +18,7 @@ form{
   border-radius: 10px;
   width: 15em;
   height: 14em;
-  font-size: 2em;
+  font-size: 1.7em;
 }
 label{
   padding: 1em 2em;
@@ -27,7 +26,7 @@ label{
 }
 form > input{
   border-radius: 10px;
-  height: 2.7em;
+  height: 2.2em;
   width: 17em;
   border: 0.7px solid gray;
   color: black;
@@ -37,13 +36,13 @@ form > input{
 }
 
 #login{
-  margin: 8em auto 0 auto;
+  margin: 0.4em auto 0 auto;
   border-radius: 15px;
-  width: 11em;
-  height: 5em;
-  padding-left: 7em;
+  width: 9em;
+  height: 4em;
+  padding-left: 5em;
   box-shadow:
-         inset 0 -3em 3em rgba(0,0,0,0.1),
+         inset 0 -2em 2em rgba(0,0,0,0.1),
                0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 #credenciales{
@@ -51,12 +50,16 @@ form > input{
   flex-direction: column;
 }
 #botonEnviar{
-  background: #0FC2C0;
   width: 10em;
   height: 2.7em;
   margin-top: 1em;
   font-size: 0.7em;
-  border: none;
   border-radius: 10px;
+  border: 1px solid #034159;
+  color: #034159;
+}
+#botonEnviar:hover{
+  background: #034159;
+  border: none;
   color: white;
 }
