@@ -38,14 +38,14 @@ if($_POST){
 	$porcentaje=($res*100)/3;
 	//echo $res." de 3 preguntas: ".$porcentaje;
 
-	switch($experiencia){
+	switch($porcentaje){
 		case 100:
 			$experienciaObtenida=10;
 			break;
 		case 70:
 			$experienciaObtenida=7;
 			break;
-		case 40:
+		case 33:
 			$experienciaObtenida=4;
 			break;
 	}
@@ -58,7 +58,6 @@ if($_POST){
 			$nivel=3;
 			break;
 	}
-	echo $experiencia;
 	$objConexion=new conexion();
 	$sqlUpdate="update examen.usuario set experiencia='$experiencia',nivel='$nivel' where ID_usuario='$idUser';";
 	$objConexion->ejecutar($sqlUpdate);

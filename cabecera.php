@@ -1,6 +1,7 @@
 <?php
 session_start();
 $usuario=(isset($_SESSION["usuario"])?$_SESSION["usuario"]:"");
+$usu=$usuario;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,6 +34,11 @@ $usuario=(isset($_SESSION["usuario"])?$_SESSION["usuario"]:"");
 			</div>
 
 			<a href="#ex1" rel="modal:open">Cerrar Sesión</a>
+		<?php } ?>
+		<?php if($usuario!=""){ ?>
+			<div id="resaltarUsuario">
+				<?php echo $usu; ?>
+			</div>
 		<?php } ?>
 	</div>
 </div>

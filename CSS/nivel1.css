@@ -59,6 +59,7 @@ input[name="botonEnviar"]{
   border-radius: 10px;
   color: #3498DB;
   cursor: pointer;
+  background: white;
 }
 input[name="botonEnviar"]:hover{
   background: #3498DB;
