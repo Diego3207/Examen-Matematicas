@@ -74,6 +74,16 @@ form a{
   font-size: 1.7em;
   margin: 1em auto;
 }
+div > a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+div > a{
+  border-right: 3px solid #034159;
+  border-bottom: 3px solid #034159;
+  width: 8em;
+  color: black;
+  text-align: center;
+}
 
 #nivel1{
   text-align: center;

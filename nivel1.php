@@ -49,7 +49,7 @@ if($_POST){
 			$experienciaObtenida=4;
 			break;
 	}
-	$experiencia+=$experienciaObtenida;
+	$experiencia=$experienciaObtenida+$experiencia;
 	switch($experiencia){
 		case 50:
 			$nivel=2;
@@ -151,8 +151,10 @@ if($_POST){
 				<?php if($usuario!=""){ ?>
 					<input type="submit" value="Enviar Formulario" name="botonEnviar" title="Enviar Formulario">
 				<?php }else{ ?>
-					<a href="registro.php">Regisrar</a>
-					<a href="login.php">Ingresar sesión</a>
+					<div id="botones">
+						<a href="registro.php">Regisrar</a>
+						<a href="login.php">Ingresar sesión</a>
+					</div>
 				<?php } ?>
 			</form>
 	</section>
