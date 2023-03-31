@@ -57,6 +57,7 @@ form > input{
   border-radius: 10px;
   border: 1px solid #034159;
   color: #034159;
+  cursor: pointer;
 }
 #botonEnviar:hover{
   background: #034159;
