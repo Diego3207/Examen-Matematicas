@@ -47,6 +47,7 @@ foreach($resultadosExamen as $calificaciones){
 		<div id="recuadroInterior">
       <img src="src/usuario.svg" alt="" title="Usuario">
       <h1 id="tituloNivel">Nivel <?php echo $nivel; ?></h1>
+      <h2>Usuario: <?php echo $usuario; ?></h2>
       <span id="experiencia">
         EXP <?php echo $experiencia; ?>
       </span>
@@ -55,7 +56,6 @@ foreach($resultadosExamen as $calificaciones){
       <span id="textoBarra"><?php echo $calcularPorcentaje; ?>%</span>
         </div>
       </div>
-      <h2>Usuario: <?php echo $usuario; ?></h2>
     </div>
 	</div>
 </body>

@@ -1,10 +1,11 @@
 h2{
-  margin: 20px auto;
+  margin: 0 auto;
   color: #0FC2C0;
+  border: 1px solid cyan;
 }
 img[title="Usuario"]{
   width: 60%;
-  margin: 2em auto 0 auto;
+  margin: 0em auto 0 auto;
 }
 
 #experiencia{
@@ -13,8 +14,10 @@ img[title="Usuario"]{
   width: 3.5em;
 }
 #tituloNivel{
-  margin: 20px auto;
+  margin-left: auto;
+  margin-right: auto;
   color: #0FC2C0;
+  border: 1px solid cyan;
 }
 #recuadroExterior{
   margin: 1em auto;
@@ -29,12 +32,14 @@ img[title="Usuario"]{
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 300px;
   height: 28em;
 }
 
 #progreso{
-  margin: 1em auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 80%;
   border-radius: 10px;
   border: 1px solid #AED6F1;
