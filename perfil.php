@@ -48,14 +48,14 @@ foreach($resultadosExamen as $calificaciones){
       <img src="src/usuario.svg" alt="" title="Usuario">
       <h1 id="tituloNivel">Nivel <?php echo $nivel; ?></h1>
       <h2>Usuario: <?php echo $usuario; ?></h2>
+      <div id="progreso">
+        <div id="barraProgreso" style="width: <?php echo $calcularPorcentaje; ?>%">
+          <span id="textoBarra"><?php echo $calcularPorcentaje; ?>%</span>
+        </div>
+      </div>
       <span id="experiencia">
         EXP <?php echo $experiencia; ?>
       </span>
-      <div id="progreso">
-      <div id="barraProgreso" style="width: <?php echo $calcularPorcentaje; ?>%">
-      <span id="textoBarra"><?php echo $calcularPorcentaje; ?>%</span>
-        </div>
-      </div>
     </div>
 	</div>
 </body>

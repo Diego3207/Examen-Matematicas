@@ -1,7 +1,15 @@
 h2{
   margin: 0 auto;
-  color: #0FC2C0;
-  border: 1px solid cyan;
+  color: #034159;
+}
+h2:before{
+  position: absolute;
+  content: "";
+  right: 44%;
+  margin-top: 1em;
+  width: 12%;
+  height: 10px;
+  border-bottom: 1px solid #0001;
 }
 img[title="Usuario"]{
   width: 60%;
@@ -9,15 +17,33 @@ img[title="Usuario"]{
 }
 
 #experiencia{
-  margin: 0 auto;
+  margin: 1em auto;
   font-size: 20px;
   width: 3.5em;
+  color: #034159;
+}
+#experiencia:before{
+  position: absolute;
+  content: "";
+  right: 44%;
+  margin-top: 1em;
+  width: 12%;
+  height: 10px;
+  border-bottom: 1px solid #0001;
 }
 #tituloNivel{
   margin-left: auto;
   margin-right: auto;
   color: #0FC2C0;
-  border: 1px solid cyan;
+}
+#tituloNivel:before{
+  position: absolute;
+  content: "";
+  right: 44%;
+  margin-top: 1em;
+  width: 12%;
+  height: 10px;
+  border-bottom: 1px solid #0001;
 }
 #recuadroExterior{
   margin: 1em auto;
@@ -40,6 +66,7 @@ img[title="Usuario"]{
 #progreso{
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1.7em;
   width: 80%;
   border-radius: 10px;
   border: 1px solid #AED6F1;
