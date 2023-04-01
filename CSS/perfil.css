@@ -1,3 +1,26 @@
+section{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+table{
+  height: 20em;
+  font-size: 1.2em;
+}
+tr:before{
+    content: "";
+    position: absolute;
+    margin-top: 1.9em;
+    width: 23em;
+    height: 1em;
+    border-bottom: 1px solid #0001;
+}
+td, th{
+  padding: 1em 3em;
+}
+th{
+  color: #034159;
+}
 h2{
   margin: 0 auto;
   color: #034159;
@@ -9,7 +32,7 @@ h2:before{
   margin-top: 1em;
   width: 12%;
   height: 10px;
-  border-bottom: 1px solid #0001;
+  /*border-bottom: 1px solid #0001;*/
 }
 img[title="Usuario"]{
   width: 60%;
@@ -29,7 +52,7 @@ img[title="Usuario"]{
   margin-top: 1em;
   width: 12%;
   height: 10px;
-  border-bottom: 1px solid #0001;
+  /*border-bottom: 1px solid #0001;*/
 }
 #tituloNivel{
   margin-left: auto;
@@ -43,10 +66,9 @@ img[title="Usuario"]{
   margin-top: 1em;
   width: 12%;
   height: 10px;
-  border-bottom: 1px solid #0001;
+  /*border-bottom: 1px solid #0001;*/
 }
 #recuadroExterior{
-  margin: 1em auto;
   border: 1px solid #034159;
   width: 350px;
   height: 31em;
@@ -79,8 +101,8 @@ img[title="Usuario"]{
   background: #5DADE2;
 }
 #textoBarra{
-  position: absolute;
-  left: 49.5%;
+  /*position: absolute;*/
+  /*left: 49.5%;*/
   color: black;
   font-size: 1.1em;
 }

@@ -8,6 +8,7 @@ $idUsuario=0;
 $experiencia=0;
 $nivel=0;
 $calificacion=[];
+$idCalificacion=[];
 $calcularPorcentaje=0;
 
 $objConexion=new conexion();
@@ -28,10 +29,11 @@ switch($nivel){
     break;
 }
 
-$sqlConsultarExamen="select calificacion from examen where id_usuario='$idUsuario'";
+$sqlConsultarExamen="select ID_examen,calificacion from examen where id_usuario='$idUsuario';";
 $resultadosExamen=$objConexion->consultar($sqlConsultarExamen);
 foreach($resultadosExamen as $calificaciones){
-	array_push($calificacion,$calificaciones);
+  array_push($calificacion,$calificaciones["calificacion"]);
+  array_push($idCalificacion,$calificaciones["ID_examen"]);
 }
 ?>
 
@@ -43,20 +45,34 @@ foreach($resultadosExamen as $calificaciones){
 	<link rel="stylesheet" href="CSS/perfil.css">
 </head>
 <body>
-	<div id="recuadroExterior">
-		<div id="recuadroInterior">
-      <img src="src/usuario.svg" alt="" title="Usuario">
-      <h1 id="tituloNivel">Nivel <?php echo $nivel; ?></h1>
-      <h2>Usuario: <?php echo $usuario; ?></h2>
-      <div id="progreso">
-        <div id="barraProgreso" style="width: <?php echo $calcularPorcentaje; ?>%">
-          <span id="textoBarra"><?php echo $calcularPorcentaje; ?>%</span>
+  <section>
+      <table>
+        <tr>
+          <th>Intento</th>
+          <th>Examen</th>
+        </tr>
+<?php $i=0; while($i<count($idCalificacion)){ ?>
+        <tr>
+          <td><?php echo $idCalificacion[$i]; ?></td>
+          <td><?php echo $calificacion[$i]; ?></td>
+        </tr>
+<?php $i++; } ?>
+      </table>
+    <div id="recuadroExterior">
+      <div id="recuadroInterior">
+        <img src="src/usuario.svg" alt="" title="Usuario">
+        <h1 id="tituloNivel">Nivel <?php echo $nivel; ?></h1>
+        <h2>Usuario: <?php echo $usuario; ?></h2>
+        <div id="progreso">
+          <div id="barraProgreso" style="width: <?php echo $calcularPorcentaje; ?>%">
+            <span id="textoBarra"><?php echo $calcularPorcentaje; ?>%</span>
+          </div>
         </div>
+        <span id="experiencia">
+          EXP <?php echo $experiencia; ?>
+        </span>
       </div>
-      <span id="experiencia">
-        EXP <?php echo $experiencia; ?>
-      </span>
     </div>
-	</div>
+  </section>
 </body>
 </html>

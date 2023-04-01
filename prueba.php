@@ -20,6 +20,41 @@
         <span class="progress-bar-text">55%</span>
     </div>
 </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Género</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spiderman</td>
+      <td>Superheroes</td>
+    </tr>
+    <tr>
+      <td>Spiderman</td>
+      <td>Superheroes</td>
+    </tr>
+    <tr>
+      <td>Spiderman</td>
+      <td>Superheroes</td>
+    </tr>
+    <tr>
+      <td>Spiderman</td>
+      <td>Superheroes</td>
+    </tr>
+    <tr>
+      <td>Spiderman</td>
+      <td>Superheroes</td>
+    </tr>
+    <tr>
+      <td>Spiderman</td>
+      <td>Superheroes</td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
 

@@ -14,9 +14,7 @@ section{
   box-shadow: 35px 35px darkcyan;
 }
 label{
-  /*border: 4px solid #0001;*/
   font-size: 1.7em;
-  /*margin-left: 1em;*/
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -37,11 +35,11 @@ a:link, a:visited, a:hover, a:active{
 a{
   margin-top: 3em;
   position: absolute;
-  left: 43%;
+  left: 45%;
   background: #034159;
   width: 8em;
-  height: 1em;
-  padding: 1.3em;
+  padding: 1em;
+  padding-right: 0;
   font-size: 1.5em;
   border: none;
   border-radius: 10px;

@@ -24,3 +24,18 @@ a {color: red; font-size: 18px;}
     font-weight: bold;
     color: #cce7f5;
 }
+
+tr:before{
+    content: "";
+    position: absolute;
+    margin-top: 0.3em;
+    width: 33em;
+    height: 1em;
+    border-bottom: 1px solid #0001;
+}
+th{
+    padding: 0 3em;
+}
+td{
+    padding: 0 3em;
+}
