@@ -1,5 +1,6 @@
 <?php
 include("conexion.php");
+include("controlExperiencia.php");
 session_start();
 $usuario=(isset($_SESSION["usuario"])?$_SESSION["usuario"]:"");
 $idUser="";
@@ -14,6 +15,10 @@ foreach($resultadosID as $id){
 	$idUser=$id[0];
 	$nivel=$id[1];
 	$experiencia=$id[2];
+}
+
+if($experiencia>=500){
+	echo "<script>alert('Has llegado al nivel máximo')</script>";
 }
 
 $sqlConsultarCalificacion="select calificacion from examen where id_usuario='$idUser'";
