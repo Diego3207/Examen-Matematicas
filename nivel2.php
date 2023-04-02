@@ -56,23 +56,24 @@ if($_POST){
 	$respuesta8=(isset($_POST["radio_respuestas8"]))?$_POST["radio_respuestas8"]:"";
 	$respuesta9=(isset($_POST["radio_respuestas9"]))?$_POST["radio_respuestas9"]:"";
 	$respuesta10=(isset($_POST["radio_respuestas10"]))?$_POST["radio_respuestas10"]:"";
-	$respuestaComprobante1=($respuesta1=="B")?1:0;
-	$respuestaComprobante2=($respuesta2=="C")?1:0;
-	$respuestaComprobante3=($respuesta3=="A")?1:0;
-	$respuestaComprobante4=($respuesta4=="C")?1:0;
-	$respuestaComprobante5=($respuesta5=="A")?1:0;
-	$respuestaComprobante6=($respuesta6=="D")?1:0;
-	$respuestaComprobante7=($respuesta7=="D")?1:0;
-	$respuestaComprobante8=($respuesta8=="B")?1:0;
-	$respuestaComprobante9=($respuesta9=="C")?1:0;
-	$respuestaComprobante10=($respuesta10=="B")?1:0;
+	$respuestaComprobante1=($respuesta1=="A")?1:0;
+	$respuestaComprobante2=($respuesta2=="D")?1:0;
+	$respuestaComprobante3=($respuesta3=="D")?1:0;
+	$respuestaComprobante4=($respuesta4=="A")?1:0;
+	$respuestaComprobante5=($respuesta5=="B")?1:0;
+	$respuestaComprobante6=($respuesta6=="B")?1:0;
+	$respuestaComprobante7=($respuesta7=="B")?1:0;
+	$respuestaComprobante8=($respuesta8=="D")?1:0;
+	$respuestaComprobante9=($respuesta9=="B")?1:0;
+	$respuestaComprobante10=($respuesta10=="A")?1:0;
 	$res=$respuestaComprobante1+$respuestaComprobante2+$respuestaComprobante3+$respuestaComprobante4+$respuestaComprobante5+$respuestaComprobante6+$respuestaComprobante7+$respuestaComprobante8+$respuestaComprobante9+$respuestaComprobante10;
 	$porcentaje=($res*100)/10;
 	echo $res." de 10 preguntas: ".$porcentaje."<br>";
 
-	$experiencia=calcularExperienciaNivel1($porcentaje,$experiencia);
-	$nivel=calcularNivel($nivel,$experiencia);
-		$objConexion=new conexion();
+	$experiencia=calcularExperienciaNivel2($porcentaje,$experiencia);
+	list($nivel,$experiencia)=calcularNivel($nivel,$experiencia);
+
+	$objConexion=new conexion();
 	$sqlUpdate="update examen.usuario set experiencia='$experiencia',nivel='$nivel' where ID_usuario='$idUser';";
 	$objConexion->ejecutar($sqlUpdate);
 
@@ -87,238 +88,247 @@ if($_POST){
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Nivel 1</title>
-	<link rel="stylesheet" href="CSS/nivel1.css">
+	<title>Nivel 2</title>
+	<link rel="stylesheet" href="CSS/nivel2.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Descripción de la página">
+	<meta name="keywords" content="HTML, CSS, Javascript">
+	<meta name="author" content="Diego Brizuela">
 </head>
 <body>
 	<section>
-		<h1 id="nivel1">Nivel 1</h1>
-			<form action="nivel1.php" method="post">
+		<h1 id="nivel2">Nivel 2</h1>
+			<form action="nivel2.php" method="post">
 				<p>
-					1. ¿Qué fracciones representan los puntos señalados en la recta?
+					1. Una compañía de teléfono cobra $2 por los primeros cinco minutos de una llamada y 30 centavos por cada minuto después. Si Bill hace una llamada que dura 25 minutos, ¿cuánto será el costo de esa llamada?
 				</p>
-				<img src="src/primerEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="A">
-						<span>A) 1/2, 3/4, 6/7</span>
+						<span>A) $8.00</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="B">
-						<span>B) 2/4, 5/8, 7/8</span>
+						<span>B) $8.50</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="C">
-						<span>C) 1/4, 5/8, 7/8</span>
+						<span>C) $9.00</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="D">
-						<span>D) 2/4, 3/8, 6/7</span>
+						<span>D) $9.50</span>
 					</label>
 				</fieldset>
 				<p>
-					2. Se le llama así a la intersección de las mediatrices de los segmentos que conforman un triángulo.
+					2. Si a = -4, y b = 3, ¿Cuál es |a - b|?
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="A">
-						<span>A) Bisectriz</span>
+						<span>A) 1</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="B">
-						<span>B) Generatriz</span>
+						<span>B) 3</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="C">
-						<span>C) Circuncentro</span>
+						<span>C) 4</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="D">
-						<span>D) Circunferencia</span>
+						<span>D) 7</span>
 					</label>
 				</fieldset>
 				<p>
-					3. ¿Cuáles de las siguientes fracciones corresponden a los números decimales: 0.4, 0.85, 0.66, 0.14?
+					3. Si 10 pulgadas en un mapa representan una distancia actual de 100 pies, entonces ¿qué distancia real es representada por 25 pulgadas en el mapa?
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="A">
-						<span>A) 2/5, 6/7, 2/3, 1/7</span>
+						<span>A) 25 pies</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="B">
-						<span>B) 3/5, 6/7, 3/4, 1/9</span>
+						<span>B) 100 pies</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="C">
-						<span>C) 1/4, 1/3, 3/4, 4/5</span>
+						<span>C) 150 pies</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="D">
-						<span>D) 1/6, 4/12, 2/3, 5/6</span>
+						<span>D) 250 pies</span>
 					</label>
 				</fieldset>
 				<p>
-					4. ¿Qué fracciones representan las partes sombreadas de las siguientes figuras?
+					4. Alex conduce de la ciudad A la ciudad B a una tasa de 60 kilómetros por hora. Si usa 2 galones de combustible por cada 50 millas, 
 				</p>
-				<img src="src/cuartoEjercicio.png" alt="Imagen Gráficos de pastel">
+				<p>
+					¿Cuántos galones de combustible necesitará para conducir durante 5 horas y así visitar a su familia en la ciudad B? (1 milla = 1.6 kilómetros)
+				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="A">
-						<span>A) 4/7, 6/10, 7/6</span>
+						<span>A) 7.5</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="B">
-						<span>B) 3/6, 6/12, 6/7</span>
+						<span>B) 9.5</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="C">
-						<span>C) 3/7, 6/10, 6/7</span>
+						<span>C) 11.5</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="D">
-						<span>D) 3/7, 3/6, 7/6</span>
+						<span>D) 13.5</span>
 					</label>
 				</fieldset>
 				<p>
-					5. Olivia reparte $270 entre sus 3 nietos. Jaime tiene 15 años, Aidé 10 y Sofía 5. Si el reparto lo hace de manera proporcional a la edad, ¿qué cantidad le corresponde a cada nieto?
+					5. ¿Cuál opción muestra el orden de menor a mayor en los siguientes números?
+					0.4, 1/6, 1/3, 0.16, 3/22
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="A">
-						<span>A) A Jaime le dio $135, a Aidé $90 y a Sofía $45</span>
+						<span>A) 3/22, 0.16, 1/3, 1/6, 0.4</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="B">
-						<span>B) A Jaime le dio $170, a Aidé $85 y a Sofía $15</span>
+						<span>B) 3/22, 0.16, 1/6, 1/3, 0.4</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="C">
-						<span>C) A Jaime le dio $145, a Aidé $80 y a Sofía $45</span>
+						<span>C) 0.16, 3/22, 1/6, 0.4, 1/3</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="D">
-						<span>D) A Jaime le dio $135, a Aidé $85 y a Sofía $50</span>
+						<span>D) 0.16, 3/22, 1/6, 1/3, 0.4</span>
 					</label>
 				</fieldset>
 				<p>
-					6. ¿Qué fracciones representan los puntos señalados en la recta?
+					6. La siguiente tabla muestra el número de estudiantes en las clases de álgebra, biología y cálculo junto con los respectivos puntajes promedio en los exámenes finales. 
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
+				<p>
+					¿Cuál es el puntaje promedio de las 3 clases si se redondea al número entero más cercano?
+				</p>
+				<img src="src/sextoEjercicioNivel2.png" alt="Imagen Tabla de Estudiantes">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="A">
-						<span>A) 1/12, 2/6, 2/4, 5/6</span>
+						<span>A) 82</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="B">
-						<span>B) 2/3, 2/12, 2/6, 6/7</span>
+						<span>B) 84</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="C">
-						<span>C) 1/4, 1/3, 3/4, 4/5</span>
+						<span>C) 86</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="D">
-						<span>D) 1/6, 4/12, 2/3, 5/6</span>
+						<span>D) 88</span>
 					</label>
 				</fieldset>
 				<p>
-					7. ¿Cuál es el perímetro y el área de un cuadrado de 15cm de lado?
+					7. Hace cinco años Amy tenía tres veces más edad que Mike. Si Mike tiene 10 años ahora ¿Qué edad tiene Amy?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="A">
-						<span>A) P = 30 cm A = 125 cm<sup>2</sup>   </span>
+						<span>A) 15</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="B">
-						<span>B) P = 60 cm A = 120 cm <sup>2</sup></span>
+						<span>B) 20</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="C">
-						<span>C) P = 30 cm A = 225 cm <sup>2</sup></span>
+						<span>C) 25</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="D">
-						<span>D) P = 60 cm A = 225 cm <sup>2</sup></span>
+						<span>D) 30</span>
 					</label>
 				</fieldset>
 				<p>
-					8. ¿Cuál opción representa el orden de mayor a menor de las siguientes fracciones: 2/3, 5/6, 3/4, 2/9, 7/8?
+					8. Joe tiene un presupuesto de $300 para gastar en los días festivos. Joe decide comprar zapatos para sus nietos. Si cada par de zapatos cuesta $40 y Joe tiene n nietos 
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
+				<p>
+					¿Cuál de las siguientes desigualdades representa la restricción presupuestaria de Joe?
+				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="A">
-						<span>A) 7/8, 5/6, 2/3, 3/4, 2/9</span>
+						<span>A) 40n > 300</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="B">
-						<span>B) 7/8, 5/6, 3/4, 2/3, 2/9</span>
+						<span>B) 40 + n > 300</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="C">
-						<span>C) 2/9, 7/8, 5/6, 3/4, 2/3</span>
+						<span>C) 40 + n <= 300</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="D">
-						<span>D) 5/6, 7/8, 3/4, 2/3, 2/9</span>
+						<span>D) 40n <= 300</span>
 					</label>
 				</fieldset>
 				<p>
-					9. ¿Cuál es la suma de los ángulos interiores de un rectángulo?
+					9. El área del círculo que se ve abajo es de 100π. ¿Cuál es el diámetro (D) del círculo?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
+				<img src="src/novenoEjercicioNivel2.png" alt="Imagen del Diámetro de un Círculo">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="A">
-						<span>A) 180°</span>
+						<span>A) 10</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="B">
-						<span>B) 240°</span>
+						<span>B) 20</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="C">
-						<span>C) 360°</span>
+						<span>C) 30</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="D">
-						<span>D) 320°</span>
+						<span>D) 40</span>
 					</label>
 				</fieldset>
 				<p>
-					10. ¿Cuál es la suma de los ángulos internos de un triángulo equilátero?
+					10. Un rectángulo está cortado a la mitad para crear dos cuadrados los cuales tienen un área de 25 cada uno. ¿Cuál es el perímetro del rectángulo original? Escriba su respuesta en el cuadro de abajo.
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="A">
-						<span>A) 240°</span>
+						<span>A) 30</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="B">
-						<span>B) 180°</span>
+						<span>B) 15</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="C">
-						<span>C) 120°</span>
+						<span>C) 25</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="D">
-						<span>D) 360°</span>
+						<span>D) 35</span>
 					</label>
 				</fieldset>
 				<?php if($usuario!=""){ ?>

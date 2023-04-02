@@ -17,7 +17,7 @@ foreach($resultadosID as $id){
 	$experiencia=$id[2];
 }
 
-if($experiencia>=500){
+if($experiencia==500){
 	echo "<script>alert('Has llegado al nivel máximo')</script>";
 }
 

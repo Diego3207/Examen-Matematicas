@@ -4,6 +4,9 @@ include("cabecera.php");
 #sin rangos
 #	primaria
 #	secundaria
+#Referencias
+#https://es.slideshare.net/donreneciotorres/matematicas-80763794
+#https://gedpracticetest.net/quizzes/ged-en-espanol-matematicas/
 ?>
 
 <head>

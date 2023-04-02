@@ -68,11 +68,11 @@ if($_POST){
 	$respuestaComprobante10=($respuesta10=="B")?1:0;
 	$res=$respuestaComprobante1+$respuestaComprobante2+$respuestaComprobante3+$respuestaComprobante4+$respuestaComprobante5+$respuestaComprobante6+$respuestaComprobante7+$respuestaComprobante8+$respuestaComprobante9+$respuestaComprobante10;
 	$porcentaje=($res*100)/10;
-	echo $res." de 10 preguntas: ".$porcentaje."<br>";
 
 	$experiencia=calcularExperienciaNivel1($porcentaje,$experiencia);
-	$nivel=calcularNivel($nivel,$experiencia);
-		$objConexion=new conexion();
+	list($nivel,$experiencia)=calcularNivel($nivel,$experiencia);
+
+	$objConexion=new conexion();
 	$sqlUpdate="update examen.usuario set experiencia='$experiencia',nivel='$nivel' where ID_usuario='$idUser';";
 	$objConexion->ejecutar($sqlUpdate);
 
@@ -89,6 +89,10 @@ if($_POST){
 	<meta charset="UTF-8">
 	<title>Nivel 1</title>
 	<link rel="stylesheet" href="CSS/nivel1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Descripción de la página">
+	<meta name="keywords" content="HTML, CSS, Javascript">
+	<meta name="author" content="Diego Brizuela">
 </head>
 <body>
 	<section>
@@ -97,7 +101,7 @@ if($_POST){
 				<p>
 					1. ¿Qué fracciones representan los puntos señalados en la recta?
 				</p>
-				<img src="src/primerEjercicio.png" alt="Imagen Fracciones">
+				<img src="src/primerEjercicioNivel1.png" alt="Imagen Recta">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
@@ -105,15 +109,15 @@ if($_POST){
 						<span>A) 1/2, 3/4, 6/7</span>
 					</label>
 					<label>
-						<input type="radio" name="radio_respuestas1" value="B">
+						<input  type="radio" name="radio_respuestas1" value="B">
 						<span>B) 2/4, 5/8, 7/8</span>
 					</label>
 					<label>
-						<input type="radio" name="radio_respuestas1" value="C">
+						<input required  type="radio" name="radio_respuestas1" value="C">
 						<span>C) 1/4, 5/8, 7/8</span>
 					</label>
 					<label>
-						<input type="radio" name="radio_respuestas1" value="D">
+						<input required  type="radio" name="radio_respuestas1" value="D">
 						<span>D) 2/4, 3/8, 6/7</span>
 					</label>
 				</fieldset>
@@ -164,7 +168,7 @@ if($_POST){
 				<p>
 					4. ¿Qué fracciones representan las partes sombreadas de las siguientes figuras?
 				</p>
-				<img src="src/cuartoEjercicio.png" alt="Imagen Gráficos de pastel">
+				<img src="src/cuartoEjercicioNivel1.png" alt="Imagen Gráficos de pastel">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
@@ -209,7 +213,7 @@ if($_POST){
 				<p>
 					6. ¿Qué fracciones representan los puntos señalados en la recta?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
+				<img src="src/sextoEjercicioNivel1.png" alt="Imagen Recta">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
@@ -232,7 +236,6 @@ if($_POST){
 				<p>
 					7. ¿Cuál es el perímetro y el área de un cuadrado de 15cm de lado?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
@@ -255,7 +258,6 @@ if($_POST){
 				<p>
 					8. ¿Cuál opción representa el orden de mayor a menor de las siguientes fracciones: 2/3, 5/6, 3/4, 2/9, 7/8?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
@@ -278,7 +280,6 @@ if($_POST){
 				<p>
 					9. ¿Cuál es la suma de los ángulos interiores de un rectángulo?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
@@ -301,7 +302,6 @@ if($_POST){
 				<p>
 					10. ¿Cuál es la suma de los ángulos internos de un triángulo equilátero?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>

@@ -56,23 +56,24 @@ if($_POST){
 	$respuesta8=(isset($_POST["radio_respuestas8"]))?$_POST["radio_respuestas8"]:"";
 	$respuesta9=(isset($_POST["radio_respuestas9"]))?$_POST["radio_respuestas9"]:"";
 	$respuesta10=(isset($_POST["radio_respuestas10"]))?$_POST["radio_respuestas10"]:"";
-	$respuestaComprobante1=($respuesta1=="B")?1:0;
-	$respuestaComprobante2=($respuesta2=="C")?1:0;
+	$respuestaComprobante1=($respuesta1=="D")?1:0;
+	$respuestaComprobante2=($respuesta2=="D")?1:0;
 	$respuestaComprobante3=($respuesta3=="A")?1:0;
-	$respuestaComprobante4=($respuesta4=="C")?1:0;
+	$respuestaComprobante4=($respuesta4=="D")?1:0;
 	$respuestaComprobante5=($respuesta5=="A")?1:0;
 	$respuestaComprobante6=($respuesta6=="D")?1:0;
 	$respuestaComprobante7=($respuesta7=="D")?1:0;
 	$respuestaComprobante8=($respuesta8=="B")?1:0;
-	$respuestaComprobante9=($respuesta9=="C")?1:0;
-	$respuestaComprobante10=($respuesta10=="B")?1:0;
+	$respuestaComprobante9=($respuesta9=="B")?1:0;
+	$respuestaComprobante10=($respuesta10=="C")?1:0;
 	$res=$respuestaComprobante1+$respuestaComprobante2+$respuestaComprobante3+$respuestaComprobante4+$respuestaComprobante5+$respuestaComprobante6+$respuestaComprobante7+$respuestaComprobante8+$respuestaComprobante9+$respuestaComprobante10;
 	$porcentaje=($res*100)/10;
 	echo $res." de 10 preguntas: ".$porcentaje."<br>";
 
-	$experiencia=calcularExperienciaNivel1($porcentaje,$experiencia);
-	$nivel=calcularNivel($nivel,$experiencia);
-		$objConexion=new conexion();
+	$experiencia=calcularExperienciaNivel3($porcentaje,$experiencia);
+	list($nivel,$experiencia)=calcularNivel($nivel,$experiencia);
+
+	$objConexion=new conexion();
 	$sqlUpdate="update examen.usuario set experiencia='$experiencia',nivel='$nivel' where ID_usuario='$idUser';";
 	$objConexion->ejecutar($sqlUpdate);
 
@@ -87,238 +88,240 @@ if($_POST){
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Nivel 1</title>
-	<link rel="stylesheet" href="CSS/nivel1.css">
+	<title>Nivel 3</title>
+	<link rel="stylesheet" href="CSS/nivel3.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Descripción de la página">
+	<meta name="keywords" content="HTML, CSS, Javascript">
+	<meta name="author" content="Diego Brizuela">
 </head>
 <body>
 	<section>
-		<h1 id="nivel1">Nivel 1</h1>
-			<form action="nivel1.php" method="post">
+		<h1 id="nivel3">Nivel 3</h1>
+			<form action="nivel3.php" method="post">
 				<p>
-					1. ¿Qué fracciones representan los puntos señalados en la recta?
+					1. ¿Cuál de las siguientes expresiones es equivalente a 3x(2+5y)?
 				</p>
-				<img src="src/primerEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="A">
-						<span>A) 1/2, 3/4, 6/7</span>
+						<span>A) 3x + 5y</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="B">
-						<span>B) 2/4, 5/8, 7/8</span>
+						<span>B) 6x + 5y</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="C">
-						<span>C) 1/4, 5/8, 7/8</span>
+						<span>C) 6x + 15y</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas1" value="D">
-						<span>D) 2/4, 3/8, 6/7</span>
+						<span>D) 6x + 15xy</span>
 					</label>
 				</fieldset>
 				<p>
-					2. Se le llama así a la intersección de las mediatrices de los segmentos que conforman un triángulo.
+					2. ¿Si y = 3ab + 2b<sup>3</sup>, a qué equivale y cuando a = 1 y b = 2?
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="A">
-						<span>A) Bisectriz</span>
+						<span>A) 16</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="B">
-						<span>B) Generatriz</span>
+						<span>B) 18</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="C">
-						<span>C) Circuncentro</span>
+						<span>C) 20</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas2" value="D">
-						<span>D) Circunferencia</span>
+						<span>D) 22</span>
 					</label>
 				</fieldset>
 				<p>
-					3. ¿Cuáles de las siguientes fracciones corresponden a los números decimales: 0.4, 0.85, 0.66, 0.14?
+					3. Factoriza: 4y(3x + 2) − 2(3x + 2)
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="A">
-						<span>A) 2/5, 6/7, 2/3, 1/7</span>
+						<span>A) (4x - 2)(3x + 2)</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="B">
-						<span>B) 3/5, 6/7, 3/4, 1/9</span>
+						<span>B) (3x - 2)(4y + 2)</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="C">
-						<span>C) 1/4, 1/3, 3/4, 4/5</span>
+						<span>C) (4y + 2)(6x)</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas3" value="D">
-						<span>D) 1/6, 4/12, 2/3, 5/6</span>
+						<span>D) (3x + 2)(4y + 2)</span>
 					</label>
 				</fieldset>
 				<p>
-					4. ¿Qué fracciones representan las partes sombreadas de las siguientes figuras?
+					4. Durante un asesoramiento de productos rechazados en una fábrica, los inspectores asignaron una puntuación de 1 a 5 para distinguir la severidad de los defectos encontrados en los productos. 
 				</p>
-				<img src="src/cuartoEjercicio.png" alt="Imagen Gráficos de pastel">
+				<p>
+					El 1 representa defectos menos severos, mientras que un 5 representa los defectos más severos. A continuación, se muestran los resultados del asesoramiento de los productos defectuosos.
+				</p>
+				<img src="src/cuartoEjercicioNivel3.png" alt="Imagen Cuadro de Frecuencias">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="A">
-						<span>A) 4/7, 6/10, 7/6</span>
+						<span>A) 1</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="B">
-						<span>B) 3/6, 6/12, 6/7</span>
+						<span>B) 2</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="C">
-						<span>C) 3/7, 6/10, 6/7</span>
+						<span>C) 3</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas4" value="D">
-						<span>D) 3/7, 3/6, 7/6</span>
+						<span>D) 4</span>
 					</label>
 				</fieldset>
 				<p>
-					5. Olivia reparte $270 entre sus 3 nietos. Jaime tiene 15 años, Aidé 10 y Sofía 5. Si el reparto lo hace de manera proporcional a la edad, ¿qué cantidad le corresponde a cada nieto?
+					5. ¿Cuál es la probabilidad de seleccionar un hombre de un grupo de 4 hombres y 8 mujeres?
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="A">
-						<span>A) A Jaime le dio $135, a Aidé $90 y a Sofía $45</span>
+						<span>A) 1/3</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="B">
-						<span>B) A Jaime le dio $170, a Aidé $85 y a Sofía $15</span>
+						<span>B) 1/2</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="C">
-						<span>C) A Jaime le dio $145, a Aidé $80 y a Sofía $45</span>
+						<span>C) 2/3</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas5" value="D">
-						<span>D) A Jaime le dio $135, a Aidé $85 y a Sofía $50</span>
+						<span>D) 4/5</span>
 					</label>
 				</fieldset>
 				<p>
-					6. ¿Qué fracciones representan los puntos señalados en la recta?
+					6. ¿Cuáles son las soluciones a la siguiente ecuación? x2 + 8x + 15 = 0
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="A">
-						<span>A) 1/12, 2/6, 2/4, 5/6</span>
+						<span>A) (2,3)</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="B">
-						<span>B) 2/3, 2/12, 2/6, 6/7</span>
+						<span>B) (3,5)</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="C">
-						<span>C) 1/4, 1/3, 3/4, 4/5</span>
+						<span>C) (-2,-3)</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas6" value="D">
-						<span>D) 1/6, 4/12, 2/3, 5/6</span>
+						<span>D) (-3,-5)</span>
 					</label>
 				</fieldset>
 				<p>
-					7. ¿Cuál es el perímetro y el área de un cuadrado de 15cm de lado?
+					7. Resulve lo siguiente: (3x + 4y)(2x + 5y)=?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="A">
-						<span>A) P = 30 cm A = 125 cm<sup>2</sup>   </span>
+						<span>A) 3x<sup>2</sup> + 8xy + 20y<sup>2</sup></span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="B">
-						<span>B) P = 60 cm A = 120 cm <sup>2</sup></span>
+						<span>B) 3x<sup>2</sup> + 15xy + 20y<sup>2</sup></span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="C">
-						<span>C) P = 30 cm A = 225 cm <sup>2</sup></span>
+						<span>C) 6x<sup>2</sup> + 15xy + 20y<sup>2</sup></span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas7" value="D">
-						<span>D) P = 60 cm A = 225 cm <sup>2</sup></span>
+						<span>D) 6x<sup>2</sup> + 23xy + 20y<sup>2</sup></span>
 					</label>
 				</fieldset>
 				<p>
-					8. ¿Cuál opción representa el orden de mayor a menor de las siguientes fracciones: 2/3, 5/6, 3/4, 2/9, 7/8?
+					8. Dado f(x) = x2 + 4x − 3, encuentre f(−3)
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="A">
-						<span>A) 7/8, 5/6, 2/3, 3/4, 2/9</span>
+						<span>A) -3</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="B">
-						<span>B) 7/8, 5/6, 3/4, 2/3, 2/9</span>
+						<span>B) -6</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="C">
-						<span>C) 2/9, 7/8, 5/6, 3/4, 2/3</span>
+						<span>C) 0</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas8" value="D">
-						<span>D) 5/6, 7/8, 3/4, 2/3, 2/9</span>
+						<span>D) 18</span>
 					</label>
 				</fieldset>
 				<p>
-					9. ¿Cuál es la suma de los ángulos interiores de un rectángulo?
+					9. Sofía está manejando a Texas. Ella viaja a 70 kilómetros por hora por cada 2 horas, y a 63 kilómetros por hora cada 5 horas. En un período de 7 horas ¿Cuál es la velocidad promedio de Sofía?
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="A">
-						<span>A) 180°</span>
+						<span>A) 64 km/h</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="B">
-						<span>B) 240°</span>
+						<span>B) 65 km/h</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="C">
-						<span>C) 360°</span>
+						<span>C) 66 km/h</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas9" value="D">
-						<span>D) 320°</span>
+						<span>D) 67 km/h</span>
 					</label>
 				</fieldset>
 				<p>
-					10. ¿Cuál es la suma de los ángulos internos de un triángulo equilátero?
+					10. La gráfica provista muestra el cambio en la velocidad de un cohete del tiempo 0 al tiempo 10.
 				</p>
-				<img src="src/sextoEjercicio.png" alt="Imagen Fracciones">
+				<img src="src/decimoEjercicioNivel3.png" alt="Imagen Grafica del Cohete">
 				<fieldset>
 					<legend>Respuestas:</legend>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="A">
-						<span>A) 240°</span>
+						<span>A) 0 to 2</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="B">
-						<span>B) 180°</span>
+						<span>B) 0 to 4.6</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="C">
-						<span>C) 120°</span>
+						<span>C) 2 to 4.6</span>
 					</label>
 					<label>
 						<input type="radio" name="radio_respuestas10" value="D">
-						<span>D) 360°</span>
+						<span>D) 3 to 4.6</span>
 					</label>
 				</fieldset>
 				<?php if($usuario!=""){ ?>

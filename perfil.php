@@ -27,6 +27,30 @@ switch($nivel){
   case 2:
     $calcularPorcentaje=($experiencia*100)/100;
     break;
+  case 3:
+    $calcularPorcentaje=($experiencia*100)/150;
+    break;
+  case 4:
+    $calcularPorcentaje=($experiencia*100)/200;
+    break;
+  case 5:
+    $calcularPorcentaje=($experiencia*100)/250;
+    break;
+  case 6:
+    $calcularPorcentaje=($experiencia*100)/300;
+    break;
+  case 7:
+    $calcularPorcentaje=($experiencia*100)/350;
+    break;
+  case 8:
+    $calcularPorcentaje=($experiencia*100)/400;
+    break;
+  case 9:
+    $calcularPorcentaje=($experiencia*100)/450;
+    break;
+  case 10:
+    $calcularPorcentaje=($experiencia*100)/506;
+    break;
 }
 
 $sqlConsultarExamen="select ID_examen,calificacion from examen where id_usuario='$idUsuario';";
@@ -64,8 +88,8 @@ foreach($resultadosExamen as $calificaciones){
         <h1 id="tituloNivel">Nivel <?php echo $nivel; ?></h1>
         <h2>Usuario: <?php echo $usuario; ?></h2>
         <div id="progreso">
-          <div id="barraProgreso" style="width: <?php echo $calcularPorcentaje; ?>%">
-            <span id="textoBarra"><?php echo $calcularPorcentaje; ?>%</span>
+          <div id="barraProgreso" style="width: <?php echo round($calcularPorcentaje); ?>%">
+            <span id="textoBarra"><?php echo round($calcularPorcentaje); ?>%</span>
           </div>
         </div>
         <span id="experiencia">
