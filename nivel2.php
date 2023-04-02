@@ -100,7 +100,10 @@ if($_POST){
 		<h1 id="nivel2">Nivel 2</h1>
 			<form action="nivel2.php" method="post">
 				<p>
-					1. Una compañía de teléfono cobra $2 por los primeros cinco minutos de una llamada y 30 centavos por cada minuto después. Si Bill hace una llamada que dura 25 minutos, ¿cuánto será el costo de esa llamada?
+					1. Una compañía de teléfono cobra $2 por los primeros cinco minutos de una llamada y 30 centavos por cada minuto después. Si Bill hace una llamada que dura 25 minutos
+				</p>
+				<p>
+					¿cuánto será el costo de esa llamada?
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>
@@ -310,7 +313,10 @@ if($_POST){
 					</label>
 				</fieldset>
 				<p>
-					10. Un rectángulo está cortado a la mitad para crear dos cuadrados los cuales tienen un área de 25 cada uno. ¿Cuál es el perímetro del rectángulo original? Escriba su respuesta en el cuadro de abajo.
+					10. Un rectángulo está cortado a la mitad para crear dos cuadrados los cuales tienen un área de 25 cada uno.
+				</p>
+				<p>
+					¿Cuál es el perímetro del rectángulo original?.
 				</p>
 				<fieldset>
 					<legend>Respuestas:</legend>

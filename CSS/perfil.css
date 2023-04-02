@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+}
 section{
   display: flex;
   flex-direction: row-reverse;
@@ -101,8 +105,8 @@ img[title="Usuario"]{
   background: #5DADE2;
 }
 #textoBarra{
-  /*position: absolute;*/
-  /*left: 49.5%;*/
+  position: absolute;
+  left: 28.5%;
   color: black;
   font-size: 1.1em;
 }

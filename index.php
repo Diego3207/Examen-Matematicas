@@ -13,7 +13,7 @@ include("cabecera.php");
 	<title>Examen</title>
 </head>
 	<header>
-		<h2>¿Que nivel eres?</h2>
+		<h2>¿Qué nivel eres?</h2>
 	</header>
 	<div id="niveles">
 		<a href="nivel1.php" id="botonNivel1">
